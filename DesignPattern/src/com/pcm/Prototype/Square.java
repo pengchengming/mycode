@@ -2,7 +2,7 @@ package com.pcm.Prototype;
 
 /**  
 * @Package com.pcm.Prototype 
-* @Title: Rectangle.java   
+* @Title: Square.java   
 * @Description: 创建扩展了 Shape抽象类的实体类Square
 * @author pcm  
 * @date 2018年7月2日 上午10:01:45

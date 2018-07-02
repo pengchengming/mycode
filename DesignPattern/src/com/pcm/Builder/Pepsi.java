@@ -2,7 +2,7 @@ package com.pcm.Builder;
 
 /**  
 * @Package com.pcm.Builder 
-* @Title: Coke.java   
+* @Title: Pepsi.java   
 * @Description: 创建了扩展ColdDrink的实体类  
 * @author pcm  
 * @date 2018年6月29日 上午9:37:52

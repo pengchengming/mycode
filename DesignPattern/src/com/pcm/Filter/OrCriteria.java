@@ -3,7 +3,7 @@ package com.pcm.Filter;
 import java.util.List;
 /**  
 * @Package com.pcm.Filter 
-* @Title: AndCriteria.java   
+* @Title: OrCriteria.java   
 * @Description: TODO  
 * @author pcm  
 * @date 2018年7月2日 下午3:05:37

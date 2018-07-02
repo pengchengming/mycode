@@ -8,7 +8,7 @@ import java.util.List;
 
 /**  
 * @Package com.pcm.Filter 
-* @Title: CriteriaMale.java   
+* @Title: CriteriaFemale.java   
 * @Description: 创建实现了Criteria接口的实体类  
 * @author pcm  
 * @date 2018年7月2日 下午2:56:41
