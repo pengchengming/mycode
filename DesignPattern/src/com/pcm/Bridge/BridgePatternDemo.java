@@ -17,7 +17,7 @@ public class BridgePatternDemo {
 		Shape greenCircle = new Circle(100, 100, 10, new GreenCircle());
 
 		redCircle.draw();
-		redCircle.draw();
+		greenCircle.draw();
 
 	}
 }
