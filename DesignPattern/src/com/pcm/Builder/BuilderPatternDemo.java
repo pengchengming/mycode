@@ -23,6 +23,8 @@ public class BuilderPatternDemo {
 	    nonVegMeal.showItems();
 	    System.out.println("Total Cost:"+nonVegMeal.getCoast());
 
+	    StringBuilder s=new StringBuilder();
+	    
 	}
 
 }
