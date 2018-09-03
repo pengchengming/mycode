@@ -1,0 +1,88 @@
+﻿.ke-inline-block
+{
+    font-size:12px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.ke-inline-block a
+{
+    color: #337FE5;
+    text-decoration: none;
+}
+.ke-inline-block a:hover
+{
+    text-decoration: underline;
+}
+.ke-plugin-filemanager-header
+{
+    margin-left:8px;
+    margin-bottom: 5px;
+    width: 100%;
+    font-size:14px;
+}
+.ke-plugin-filemanager-header .ke-left {
+  float: left;
+  margin-top:8px;
+}
+.ke-plugin-filemanager-header .ke-right {
+  float: right;
+  margin-right:10px;
+}
+.ke-clearfix:after {
+  clear: both;
+  content: ".";
+  display: block;
+  font-size: 0;
+  height: 0;
+  line-height: 0;
+  visibility: hidden;
+}
+.ke-plugin-filemanager-body
+{
+    background-color: #FFFFFF;
+    border-color: #848484 #E0E0E0 #E0E0E0 #848484;
+    border-style: solid;
+    border-width: 1px;
+    height: 370px;
+    overflow: auto;
+    overflow-x: hidden;
+    padding: 5px;
+    width: auto;
+    font-size:12px;
+}
+.ke-plugin-filemanager-body .ke-item
+{
+    margin: 5px;
+    width: 120px;
+}
+.ke-plugin-filemanager-body .ke-directory
+{
+    background-color:transparent;
+    background-image:url(images/directory.png);
+    border: none;
+}
+.ke-plugin-filemanager-body .ke-photo :hover
+{
+    border: 1px solid #5690D2;
+    background-color: #E9EFF6;
+}
+.ke-plugin-filemanager-body .ke-photo
+{
+    background-color: #FFFFFF;
+    border: 1px solid #DDDDDD;
+    padding: 10px;
+}
+.ke-plugin-filemanager-body .ke-name
+{
+    height: 16px;
+    overflow: hidden;
+    text-align: center;
+    width: 120px;
+}
+.ke-dialog-footer {
+  background-color: #FFFFFF;
+  font: 12px/1 "sans serif",tahoma,verdana,helvetica;
+  padding: 0 0 5px;
+  text-align: right;
+  width: 100%;
+}

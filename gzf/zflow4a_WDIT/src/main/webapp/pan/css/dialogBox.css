@@ -1,0 +1,13 @@
+﻿.dialogBox{ border: 1px solid #CACACA; background-color:White;}
+.dialogBox .boxTitle 
+{
+    background: url("images/table_top_bg.gif") repeat-x scroll left top transparent;
+    padding: 10px 10px 0px 10px;
+    text-align: left;
+    cursor:move;
+    height:20px;
+ }
+.dialogBox .titleText{color:#666;font-size:13px;font-weight:bold;white-space: nowrap;cursor:default;}
+.dialogBox .btnClose{background:url(images/del.gif) no-repeat center top;  cursor:pointer; text-indent:-100px; overflow:hidden; width:8px; height:9px; padding:0px 5px 0px 5px; }
+.dialogBox .boxTools{ background-color: #CACACA; height:25px; padding-top:3px;}
+.dialogBox .boxTools .btn{ font-size:12px; margin:auto 3px auto 3px; color:Green; }

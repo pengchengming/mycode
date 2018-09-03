@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bizduo.zflow.mybatis.mapper.SMSMapper">
+
+	
+ <select id="findAll" parameterType="String" resultType="com.bizduo.zflow.mybatis.domain.SMS">  
+     select ID,mobile,content,status,verifytype,verifycode,verifystatus,device_id FROM sys_SMS
+ </select>
+
+ <select id="findSMS2Send" parameterType="String" resultType="com.bizduo.zflow.mybatis.domain.SMS">  
+     select ID,mobile,content,status,verifytype,verifycode,verifystatus,device_id  FROM sys_SMS where status=0
+ </select>
+
+<update id="updateSMSByID" parameterType="com.bizduo.zflow.mybatis.domain.SMS"
+flushCache="true">
+update sys_SMS
+<set>
+<if test="status != null">
+status = #{status,jdbcType=INTEGER},
+</if>
+<if test="msg != null">
+msg = #{msg,jdbcType=VARCHAR},
+</if>
+<if test="submittime != null">
+msg = #{submittime,jdbcType=TIME},
+</if>
+</set>
+where id = #{id,jdbcType=INTEGER}
+</update>
+
+</mapper>

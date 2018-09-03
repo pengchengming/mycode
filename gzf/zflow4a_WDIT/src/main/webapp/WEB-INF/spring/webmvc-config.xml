@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" 
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd                 
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd                 
+	http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd">
+    
+	<context:component-scan base-package="com.bizduo.zflow" use-default-filters="false">
+		<context:include-filter expression="org.springframework.stereotype.Controller" type="annotation"/>
+  		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Service" /> 
+	</context:component-scan>
+	
+	<mvc:annotation-driven>
+		<mvc:message-converters register-defaults="true">
+    		<bean class="org.springframework.http.converter.StringHttpMessageConverter">
+      			<property name="supportedMediaTypes" value = "text/plain;charset=UTF-8" />
+    		</bean>
+   		</mvc:message-converters>
+    </mvc:annotation-driven>
+
+	<mvc:resources location="/,classpath:/META-INF/web-resource/" mapping="/resource/**"/>
+	<mvc:resources mapping="/javascript/**" location="/javascript/" />
+	<mvc:resources mapping="/images/**" location="/images/" /> 
+	<mvc:resources mapping="/WEB-INF/i18n/**" location="/WEB-INF/i18n/" />
+	<mvc:resources mapping="/api/**" location="/api/" />
+	<mvc:resources mapping="/css/**" location="/css/" />
+	<mvc:resources mapping="/js/**" location="/js/" /> 
+	<mvc:resources mapping="/tourism/script/**" location="/WEB-INF/views/tourism/script/" />
+	<mvc:resources mapping="/tourism/css/**" location="/WEB-INF/views/tourism/css/" />
+	<mvc:default-servlet-handler/>
+	
+	<mvc:interceptors>
+		<bean class="org.springframework.web.servlet.theme.ThemeChangeInterceptor"/>
+		<bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor" p:paramName="lang"/>
+	</mvc:interceptors>
+	
+	<mvc:view-controller path="/" view-name="redirect:/wditLogin"/>
+
+    <bean class="org.springframework.context.support.ReloadableResourceBundleMessageSource"
+    	id="messageSource" p:basenames="WEB-INF/i18n/application,WEB-INF/i18n/messages"
+    	p:fallbackToSystemLocale="false" p:defaultEncoding="UTF-8" p:useCodeAsDefaultMessage="true"  />
+<!--     	    <bean class="org.springframework.context.support.ReloadableResourceBundleMessageSource" -->
+<!--     	id="messageSource" p:basenames="classpath:/i18n/application,classpath:/i18n/messages" -->
+<!--     	p:fallbackToSystemLocale="false" p:defaultEncoding="UTF-8" p:useCodeAsDefaultMessage="true"  /> -->
+    <bean class="org.springframework.web.servlet.i18n.CookieLocaleResolver" id="localeResolver" p:cookieName="locale"/>
+    	
+    <bean class="org.springframework.ui.context.support.ResourceBundleThemeSource" id="themeSource"/>
+
+	<bean class="org.springframework.web.servlet.theme.CookieThemeResolver" id="themeResolver" p:cookieName="theme" p:defaultThemeName="standard"/>
+	
+	<bean id="mappingJacksonHttpMessageConverter" class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter">
+		<property name="supportedMediaTypes">
+	        <list>
+	            <value>text/plain;charset=utf-8</value>
+	            <value>text/html;charset=utf-8</value>
+	            <value>text/json;charset=utf-8</value>
+	            <value>application/json;charset=utf-8</value>
+	        </list>
+        </property>
+	</bean>
+	
+<!-- 	<bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver" p:defaultErrorView="uncaughtException"> -->
+<!-- 		<property name="exceptionMappings"> -->
+<!-- 			<props> -->
+<!-- 				<prop key=".DataAccessException">dataAccessFailure</prop> -->
+<!--  				<prop key=".NoSuchRequestHandlingMethodException">resourceNotFound</prop> -->
+<!-- 				<prop key=".TypeMismatchException">resourceNotFound</prop> -->
+<!-- 				<prop key=".MissingServletRequestParameterException">resourceFound</prop> -->
+<!-- 			</props> -->
+<!-- 		</property> -->
+<!-- 	</bean> -->
+	
+<!-- 	<bean class="org.springframework.web.servlet.view.UrlBasedViewResolver"> -->
+<!-- 		<property name="viewClass" value="org.springframework.web.servlet.view.JstlView" /> -->
+<!-- 		<property name="prefix" value="/WEB-INF/views/" /> -->
+<!-- 		<property name="suffix" value=".jsp" /> -->
+<!--     </bean> -->
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">  
+	    <property name="viewClass" value="org.springframework.web.servlet.view.JstlView" />
+	    <property name="cache" value="false" />
+	    <property name="prefix" value="/WEB-INF/views/" />  
+	    <property name="suffix" value=".jsp" />
+	</bean> 
+
+	<bean class="com.bizduo.zflow.web.ZflowCommonsMultipartResolver" id="multipartResolver">
+		<property name="maxUploadSize" value="1024000000" />
+        <property name="maxInMemorySize" value="4096" />
+        <property name="defaultEncoding" value="UTF-8" />
+    </bean>
+	<!-- tiles页面解析器-->  
+<!-- 	<bean class="org.springframework.web.servlet.view.UrlBasedViewResolver" id="tilesViewResolver"> -->
+<!-- 		<property name="viewClass" value="org.springframework.web.servlet.view.tiles2.TilesView" /> -->
+<!-- 	</bean> -->
+	
+<!-- 	<bean class="org.springframework.web.servlet.view.tiles2.TilesConfigurer" id="tilesConfigurer"> -->
+<!-- 		<property name="definitions"> -->
+<!-- 			<list> -->
+<!-- 				<value>/WEB-INF/layouts/layouts.xml</value> -->
+<!-- 				<value>/WEB-INF/views/**/views.xml</value> -->
+<!-- 			</list> -->
+<!-- 		</property> -->
+<!-- 		<property name="preparerFactoryClass" value="org.springframework.web.servlet.view.tiles2.SpringBeanPreparerFactory"/> -->
+<!-- 	</bean> -->
+ <!-- ContentNegotiatingViewResolver视图解析器,利用他就可以配置多种返回值 -->
+ <bean  class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">   
+       
+   <!-- 这里是否忽略掉accept header，默认就是false -->
+   <property name="ignoreAcceptHeader" value="true" />   
+    
+   <!-- 如果所有的mediaType都没匹配上，就会使用defaultContentType -->
+   <property name="defaultContentType" value="text/html" />   
+    
+   <property name="mediaTypes">    
+    <map>     
+     <entry key="json" value="application/json" />      
+     <entry key="xml" value="application/xml" />      
+    </map>    
+   </property>   
+  <!-- 默认使用MappingJacksonJsonView生成jsonview-->
+  <property name="defaultViews">    
+    <list>     
+     <bean class="org.springframework.web.servlet.view.json.MappingJackson2JsonView"/>
+<!--      <bean  class="org.springframework.web.servlet.view.json.MappingJacksonJsonView">         -->
+<!--          <property  name="extractValueFromSingleKeyModel" value="true" />      -->
+<!--       </bean>         -->
+      <bean  class="org.springframework.web.servlet.view.xml.MarshallingView">      
+       <property name="marshaller">        
+        <bean class="org.springframework.oxm.xstream.XStreamMarshaller" />        
+      </property>      
+      </bean>      
+     </list>     
+    </property>  
+  </bean>	
+</beans>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<process name="contractexecution" xmlns="http://jbpm.org/4.4/jpdl">
+   <start g="76,41,48,48" name="start1">
+      <transition g="-21,-23" name="to task1" to="wait4pay1"/>
+   </start>
+      <state g="189,36,92,52" name="wait4pay1">
+      <transition to="constructioninfo"/>
+   </state>
+   <task g="352,40,155,52" name="constructioninfo">
+      <transition g="-33,-23" name="to exclusive1" to="exclusive1"/>
+   </task>
+   <decision g="576,43,48,48" name="exclusive1"/>
+
+</process>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<process name="customerfollowup" xmlns="http://jbpm.org/4.4/jpdl">
+
+  <start g="13,23,80,40">
+      <transition name="to assignsales" to="assignsales" g="-30,-29"/>
+  </start>
+   <task g="306,17,150,52" name="assigndesigner">
+      <transition g="-46,-42" name="to solutionquota" to="solutionquota"/>
+   </task>
+   <task g="491,20,132,52" name="solutionquota">
+      <transition name="to fork2" to="fork2" g="-52,-22"/>
+   </task>
+   <sub-process g="781,20,92,52" name="specialprice"/>
+   <task g="274,114,132,52" name="signintentcontract">
+      <transition name="to join1" to="join1" g="-23,-30"/>
+   </task>
+   <task g="18,143,92,52" name="measure">
+      <transition name="to task1" to="submitdesign" g="-52,-22"/>
+   </task>
+   <task g="29,499,92,52" name="signcontract">
+      <transition g="251,524;250,545:-17,18" name="to ContractExecution" to="ContractExecution"/>
+      <transition g="249,524;248,491:-12,-17" name="to payment1" to="payment1"/>
+   </task>
+   <task g="368,469,92,52" name="payment1"/>
+   <end g="845,522,48,48" name="end2"/>
+   <sub-process g="361,523,151,52" name="ContractExecution" sub-process-id="contractexecution" sub-process-key="contractexecution">
+      <transition g="-50,-22" name="to end2" to="end2"/>
+   </sub-process>
+   <task name="assignsales" g="99,17,103,52">
+      <transition g="-61,-22" name="to assigndesigner" to="assigndesigner"/>
+   </task>
+   <fork name="fork1" g="648,142,48,48">
+      <transition name="to signintentcontract" to="signintentcontract" g="499,169;498,139:-96,-37"/>
+      <transition name="to Pay1stCost" to="Pay1stCost" g="502,170;504,207:-91,26"/>
+   </fork>
+   <task name="Pay1stCost" g="282,183,127,51">
+      <transition name="to join1" to="join1" g="-21,4"/>
+   </task>
+   <join name="join1" g="181,147,48,48">
+      <transition g="-34,-23" name="to measure" to="measure"/>
+   </join>
+   <task name="submitdesign" g="13,366,114,52">
+      <transition name="to fork3" to="fork3" g="-52,-22"/>
+   </task>
+   <fork name="fork2" g="643,26,48,48">
+      <transition g="-52,-6" name="to signintentcontract" to="fork1"/>
+      <transition g="-47,-19" name="to specialprice" to="specialprice"/>
+   </fork>
+   <decision name="AuditBudget" g="173,285,48,48">
+      <transition name="to submitdesign" to="submitdesign" g="67,308:-99,-22"/>
+      <transition to="submitBudget" g="504,309:"/>
+   </decision>
+   <task name="submitBudget" g="453,374,106,52">
+      <transition name="to signcontract" g="-47,-22"/>
+   </task>
+   <decision g="713,366,48,48">
+      <transition to="signcontract" g="740,451;75,445:"/>
+      <transition name="to submitBudget" to="submitBudget" g="738,306;504,308:-41,-27"/>
+   </decision>
+   <fork name="fork3" g="181,370,48,48">
+      <transition name="to AuditBudget" to="AuditBudget" g="-47,-14"/>
+      <transition name="to submitBudget" to="submitBudget" g="-49,-27"/>
+   </fork>
+</process>

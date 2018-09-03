@@ -1,0 +1,146 @@
+
+/* CSS Document */
+
+/* Áº∫ÁúÅ************************************ */
+* {
+	padding:0px; 
+	margin:0px;
+	font-size:12px; 
+}
+html{
+}
+
+li {
+	list-style:none;
+}
+img {
+	border:0px;
+}
+
+a {
+	color:#646464;
+	text-decoration:none;
+}
+a:hover {
+	text-decoration:none;
+}
+td{
+	/*background-color:#fff;*/
+}
+body {
+	font-family:"ÂÆã‰Ωì", Arial, Helvetica, sans-serif;
+	margin:0 auto;
+	height:auto;
+	background:#fff;
+}
+.content{
+	margin:0 auto;
+}
+.head{
+	width:100%;
+	height:80px;
+}
+.logo_here{
+	width:100%;
+	height:50px;		
+}
+.nav{
+	width:100%;
+	height:30px;	
+	background:#6794d9;
+}
+.nav a{
+	color:#fff;
+	font-size:14px;
+	font-family:"Œ¢»Ì—≈∫⁄";
+}
+.main{
+	width:100%;
+	border-top:3px solid #7ca6e6;
+	border-bottom:3px solid #7ca6e6;
+	overflow:hidden;
+}
+.left_menu{
+	float:left;
+	width:220px;
+	height:100%;
+	border-left:3px solid #7ca6e6;	
+}
+.draggable{
+	float:left;
+	width:3px;
+	height:100%;	
+	background:#7ca6e6;
+	cursor:pointer;
+}
+.workspace{
+	float:left;	
+	height:100%;
+}
+.jbpmWorkspace{
+	float:left;	
+	height:100%;
+}
+.components{
+	float:left;
+	width:220px;
+	height:100%;
+	border-right:3px solid #7ca6e6;		
+}
+.index_border{
+	float:left;
+	width:3px;
+	height:100%;
+	background:#7ca6e6;
+}
+.foot{
+	width:100%;
+	height:20px;	
+	background:#6794d9;	
+	text-align:center
+}
+.thin_title{
+	float:left;
+	width:100%;
+	height:25px;
+	background:#96c5ef;
+	color:#fff;
+	font-size:14px;
+}
+.left_menu_inner{
+	float:left;
+	width:100%;	
+	overflow:auto;
+}
+.workspace_title{
+	float:left;
+	width:100%;
+	height:25px;
+	background:#96c5ef;
+	color:#fff;
+	font-size:14px;	
+}
+.toolbar{
+	float:left;
+	width:100%;
+	height:30px;
+	background:#f1f1f1;
+}
+.workspace_inner{
+	float:left;
+	width:100%;
+	overflow:auto;
+}
+.components_inner{
+	float:left;
+	width:100%;	
+	overflow:auto;	
+}
+
+
+
+
+
+
+
+

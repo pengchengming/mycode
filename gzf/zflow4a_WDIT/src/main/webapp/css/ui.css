@@ -1,0 +1,664 @@
+@CHARSET "UTF-8";
+
+/*
+ff : opacity: 0.5;
+ie : filter: alpha(opacity=50);
+*/
+.ui-cover {          /**/
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	opacity: 0.6;
+	filter: alpha(opacity =               60);
+	background-color: #e6e6e6;
+	z-index: 40;
+	display: none;
+}
+
+.ui-controller {          /**/
+	z-index: 60;
+}
+
+.ui-input-text {          /**/
+
+	position: absolute;
+}
+.ui-table input[type="text"].ui-input-text{
+	position: absolute;
+	background:#fff url(img/input_bg.gif) repeat-x left bottom;
+	border:0;
+}
+.ui-input-select {          /**/
+	position: absolute;
+	list-style: none;
+	background:#f1faf8 url(img/select_bg.jpg) repeat-y right top;
+	border: 1px solid #b4e0d2;
+	overflow: hidden;
+	float: left;
+	font-size: 12px;
+	border-collapse:collapse;	
+	padding-right:5px;
+}
+
+.ui-input-select td{
+	background:none;
+	padding-left:5px;
+	padding-right:30px;
+	height:20px;
+}
+
+.ui-input-select-tr {          /**/
+	cursor: pointer;
+	/*width: 100%;*/
+	padding: 0px 30px 0px 5px;
+	height:16px;
+}
+.ui-input-select-tr-td { 
+	padding-right:20px;
+}
+.ui-input-select-tr-value .ui-input-select-tr-td {          /**/
+	background:#f1faf8 url(img/select_current.gif) no-repeat right top;
+}
+
+.ui-input-select-tr-hover .ui-input-select-tr-td {          /**/
+	background:#c7e8de url(img/select_hover.jpg) no-repeat right top;
+}
+
+  /*搜索框中的日期控件样式*/
+.search-table .ui-data-block{
+	text-align:left;
+	cursor:pointer;
+	empty-cells:show;
+}
+  /*日期控件样式*/
+.ui-input-date {
+	background-color: #fff;
+	border:1px solid #86a2d2;
+}
+.ui-input-date-text{
+	border:1px solid #73c4ac;	
+	margin:0px;
+	height:16px;
+	cursor:pointer;
+	background:#ffffff url(pics/data-img.jpg) no-repeat right -1px;
+}
+.search-table .ui-input-date-text{
+/*	margin-left:-10px;*/
+}
+.ui-input-date td {
+	text-align: center;
+
+}
+
+.ui-input-date-year-table {
+	width: 160px;
+	background-color: #f1ffe6;
+	border-collapse:collapse;
+}
+.ui-input-date-year-table td{
+	background-color: #f1ffe6;
+}
+.ui-input-date-month-table {
+	width: 160px;
+	background-color: #f1ffe6;
+	border-top:1px solid #86a2d2;
+	border-collapse:collapse;
+}
+
+.ui-input-date-month-table td{
+	background-color: #f1ffe6;
+}
+
+.ui-input-date-table {
+	width: 160px;
+	border-collapse:collapse;
+}
+
+.ui-input-date-table thead tr th{
+	background:#86a2d2;
+	padding: 2px;
+}
+
+.ui-input-date-button-table {
+	width: 160px;
+}
+
+.ui-input-date td.ui-input-date-td {
+	cursor: pointer;
+	padding: 3px;
+	background:url(pics/date-td-bg.jpg) repeat-x left 1px;
+}
+
+.ui-input-date td.ui-iunput-date-hover {
+	background:url(pics/date-hover.jpg) no-repeat 0px 0px;
+}
+
+.ui-input-date td.ui-iunput-date-selected {
+	background:url(pics/date-now.jpg) no-repeat -1px 0px;
+}
+
+.ui-input-date-button {
+	cursor: pointer;
+}
+.ui-input-date-button-table .ui-input-date-button{
+	padding-top:1px;
+	padding-bottom:2px;
+}
+.ui-input-date-year-quick-back {
+	width:19px;
+	height:15px;
+	background:url(pics/date-btn.jpg) no-repeat 0px -1px;
+}
+
+.ui-input-date-year-quick-forward {
+	width:19px;
+	height:15px;
+	background:url(pics/date-btn.jpg) no-repeat 0px -1px;	
+}
+
+.ui-input-date-year-back {
+	width:19px;
+	height:15px;
+	background:url(pics/date-btn.jpg) no-repeat 0px -1px;	
+}
+
+.ui-input-date-year-forward {
+	width:19px;
+	height:15px;
+	background:url(pics/date-btn.jpg) no-repeat 0px -1px;	
+}
+
+.ui-input-date-month-back {
+	width:19px;
+	height:15px;
+	background:url(pics/date-btn.jpg) no-repeat 0px -1px;	
+}
+
+.ui-input-date-month-forward {
+	width:19px;
+	height:15px;
+	background:url(pics/date-btn.jpg) no-repeat 0px -1px;	
+}
+.ui-input-date-button-ok{
+	background:url(pics/date-bottom-btn.gif) no-repeat 5px 0px;	
+}
+.ui-input-date-button-today{
+	background:url(pics/date-bottom-btn.gif) no-repeat 5px 0px;	
+}
+.ui-input-date-button-cancel{
+	background:url(pics/date-bottom-btn.gif) no-repeat 5px 0px;	
+}
+.ui-input-date-button-clearnull{
+	background:url(pics/date-bottom-btn.gif) no-repeat 5px 0px;	
+}
+/*一般JSON表格样式*/
+.ui-table {             /**/
+	border-collapse:collapse;/*td双边合并为一条线*/
+	width:784px;
+}
+/*首页库存预警表格样式*/
+.attention-inner .ui-table {
+	border-collapse:collapse;
+	width:365px;	
+}
+.attention-inner .ui-table th{
+	height:20px;
+	padding-top:2px;
+}
+.attention-inner .ui-table td{
+	height:20px;
+}
+/*首页补货跟踪表格样式*/
+.order-inner .ui-table {
+	border-collapse:collapse;
+	width:320px;	
+}
+.order-inner .ui-table th{
+	height:20px;
+	padding-top:2px;
+}
+.order-inner .ui-table td{
+	height:20px;
+}
+/*左右匹配JSON表格样式*/
+.compare-table-containerL .ui-table{
+	border-collapse:collapse;
+	width:400px;	
+}
+.compare-table-containerR .ui-table{
+	border-collapse:collapse;
+	width:400px;	
+}
+.ui-table td {             /**/
+	border:1px solid #fff;
+	padding:2px 2px 2px 3px;
+	height:21px;
+	color:#666;	
+}
+
+.ui-table thead th {             /**/
+	height:25px;
+	padding:0px 1px 0px 2px;
+	vertical-align:middle;
+	font-weight:bold;
+	color:#277474;
+	text-align:center;
+	white-space:nowrap;/*规定段落中的文本不进行换行*/
+	background:url(img/th-bg.jpg) repeat-x left top;
+}
+.ui-table thead th.ui-table-first-th{
+	padding-left:3px;
+	background:url(img/th-left.jpg) no-repeat left top;
+}
+.ui-table .ui-input-container{
+	
+}
+
+.ui-table .ui-tr-even .ui-input-container{
+	
+}
+
+.ui-tr-even td{             /**/
+	background-color:#efefef;
+}
+.ui-table .ui-input-date-text{
+	border:1px solid #a7a6aa;
+}
+.ui-data-validate-err{
+	background-color:#fffeee;
+}
+.ui-table-detail-button {             /* */
+	background-color: #00ff00;
+	background: url("pics/arrs.gif") no-repeat -56px 1px;
+	cursor: pointer;
+	width: 18px;
+	height: 15px;
+}
+
+.ui-table-detail-button-2 {             /**/
+	background-color: #00ff00;
+	background: url("pics/arrs.gif") no-repeat -36px 1px;
+	cursor: pointer;
+	width: 18px;
+	height: 15px;
+}
+
+.ui-table-add-button {             /**/
+	background-color: #00ff00;
+	background: url("pics/arrs.gif") no-repeat left top;
+	cursor: pointer;
+	width: 15px;
+	height: 15px;
+	float: left;
+	margin: auto 6px;
+	display: none;
+}
+
+.ui-table-last-tr .ui-table-add-button {             /**/
+	display: block;
+}
+
+.ui-table th .ui-table-add-button {             /**/
+	display: block;
+}
+
+.ui-table-del-button {             /**/
+	background-color: #00ff00;
+	background: url("pics/arrs.gif") no-repeat -16px top;
+	cursor: pointer;
+	width: 18px;
+	height: 15px;
+	float: left;
+	margin: auto 0px;
+}
+.ui-table-first-tr .ui-table-del-button {             /**/
+	display: none;
+}
+td.ui-table-detail-container {           /**/
+	padding: 0px;
+	background:#e5f3da url("img/detail-table-left.jpg") repeat-y left 5px;
+}
+.ui-table-detail-container .ui-table{
+	border:0;
+	width:774px;
+	margin-left:5px;
+	margin-bottom:3px;
+}
+.ui-table-detail-container .ui-table thead th {
+	border:0;
+	background:#e5f3da url("img/detail-table-top.jpg") repeat-x left top;
+	height:20px;
+	padding-top:5px;
+	color:#4c4c4c;
+}
+
+.ui-table-detail-container .ui-table tbody td {
+	border:2px solid #e5f3da;
+}
+.ui-table-detail-container .ui-table td.ui-input-container {
+	background:#ffffff;
+}
+.ui-table-detail-container .ui-table .ui-tr-even td.ui-input-container {
+	background:#EFEFEF;
+}
+.ui-table-tr-unSelected {
+	background-color: #00ff00;
+	background: url("pics/checkbox.gif") no-repeat 0px 0px;
+	cursor: pointer;
+	width: 13px;
+	height: 13px;
+	float: left;
+	margin: auto 3px;
+}
+
+.ui-table-tr-selected {
+	background-color: #00ff00;
+	background: url("pics/checkbox.gif") no-repeat 0px -13px;
+	cursor: pointer;
+	width: 13px;
+	height: 13px;
+	float: left;
+	margin: auto 3px;
+}
+
+/*弹出框样式*/
+.ui-window-container {
+	position: absolute;
+	overflow: visible;
+	z-index: 50;
+	font-size: 12px;
+}
+
+.ui-window-frame {
+	overflow: visible;
+	width: 400px;
+}
+
+.ui-window-title {
+	background: url(images/float-div-top-left.png) no-repeat left top;
+	height:20px;
+	font-weight: bold;
+	font-size: 13px;
+	cursor: pointer;
+}
+.ui-window-title-inner{
+	height:17px;
+	background:#fff;
+	text-align:right;
+	color:#99cc00;
+	font-size:15px;
+	padding-top:3px;
+	padding-right:5px;
+	margin-right:15px;
+	margin-left:15px;
+}
+.ui-window-foot-inner{
+	height:40px;
+/* 	background:url(images/float-div-bottom.png) repeat-x left top; */
+	text-align:center;
+	padding-top:10px;
+	margin-right:24px;
+	margin-left:15px;
+	
+}
+.ui-window-content {
+	padding:10px 13px 10px 10px;
+	background:url(images/float-div-body-bg.png) repeat-y right top;
+	height:auto;	
+}
+
+.ui-window-foot {
+	text-align: center;
+/* 	background: url(images/float-div-bottom-left.png) no-repeat left top; */
+	height:50px;
+}
+
+.ui-window-close-button {
+	display:block;
+	width:24px;
+	height:20px;
+	float: right;
+	background:url(images/float-div-top-right.png) no-repeat 0px 0px;
+}
+.ui-window-foot-right{
+	width:24px;
+	height:50px;
+	float: right;
+/* 	background:url(images/float-div-bottom-right.png) no-repeat 0px 0px; */
+}
+.ui-window-button {
+	padding: 0px 5px;
+	padding-top: 3px;
+	margin: 0px 10px;
+}
+/*弹出框内容滚动*/
+.ui-window-table-container{
+	height:450px;
+	overflow:auto;		
+}
+.ui-window-table th{
+	text-align:right;
+	padding-left:10px;
+	color:#277474;
+}
+
+.ui-window-table td.ui-data-block{
+	text-align:left;
+}
+.ui-window-table .ui-input-date-text{
+	border:1px solid #a7a6aa;	
+	margin-top:0px;
+	height:16px;
+	cursor:pointer;
+	background:url(pics/data-img.jpg) no-repeat right -1px;
+}
+.ui-window-td-left{
+	text-align:right;
+	width:120px;
+}
+
+/*********************************************************待清除样式*/
+.ui-window-btn-inquiry{
+	width:69px;
+	height:20px;
+	border:0;
+	cursor:pointer;
+	margin:0px 10px;
+	background:url(img/ui-window-btn-inquiry.jpg);
+}
+.ui-window-btn-cancel{
+	width:69px;
+	height:20px;
+	border:0;
+	cursor:pointer;
+	margin:0px 10px;
+	background:url(img/ui-window-btn-cancel.jpg);
+}
+.ui-window-form-table{
+	border-collapse:collapse;
+}
+.ui-window-form-top-first{
+	background:url("img/th-left.jpg") no-repeat left top;
+	height:20px;
+}
+.ui-window-form-top{
+	background:url("img/th-bg.jpg") repeat-x left top;
+}
+.ui-window-form-table th{
+	text-align:right;
+	padding:3px;
+	background-color:expression((this.parentElement.rowIndex%2==0)?"#efefef":"#ffffff");
+	border:1px solid #fff;
+}
+.ui-window-form-table td{
+	padding:3px;
+	background-color:expression((this.parentElement.rowIndex%2==0)?"#efefef":"#ffffff");
+	border:1px solid #fff;
+
+}
+/************************************margin-top:-17px;*********************待清除样式*/
+.ui-font-red{
+	color:red;
+}
+.ui-button-container{
+	width:50px;
+	height:15px;
+	overflow:hidden;
+}
+
+/*页面导航样式*/
+.ui-menu {
+/*	float:left;*/
+	margin:0;
+	padding:0;
+	margin-top:2px;	
+	margin-left:30px;		
+}
+
+.ui-menu-item-first {
+	height:40px	;
+}
+
+.ui-menu ul {
+	
+}
+
+.ui-menu li {
+	float:left;
+	margin:0;
+	padding:0;	
+	text-align:left;
+	height:40px;
+	display:inline;
+	list-style: none; 
+	cursor:pointer;
+}
+.ui-menu-text:hover{
+	background-color:#fff;
+}
+.index_menu li:hover{
+ 	color: #666666;
+ }
+
+.ui-menu-inner-text{
+	margin-top:4px;
+	color:#D3D3D3;
+}
+.ui-menu li a{
+/* 	display:block; */
+/* 	height:20px; */
+/* 	text-align:center; */
+/* 	padding-top:2px; */
+/* 	padding-left:3px;	 */
+/* 	margin-top:2px; */
+/* 	width:90px;	 */
+}
+.ui-menu li a:hover{
+	text-decoration: underline;
+	color: #0084FF;
+
+}
+.ui-menu li a.current{
+	color:#fff;
+
+}
+.ui-menu-sub-div{
+	z-index:9005;
+	position: absolute;
+	position: absolute\9;
+	top:40px;
+	width:500px;
+}
+
+.ui-menu li.ui-menu-sub-div{
+	cursor:default;
+}
+.ui-menu-sub {
+	display: none;
+}
+
+.ui-menu-sub .ui-menu-item {
+	color:#666;
+	padding-left:10px;
+	padding-top:5px;
+	margin-left:5px;
+	background:url(images/sub_list_img.gif) no-repeat left 14px;	
+}
+.ui-menu-sub .ui-menu-item-hover{
+	color:#fff;
+}
+.ui-menu-bottm{
+	width:135px;
+	height:25px;
+	margin-left:-10px;
+	background:url(img/ui-menu-bottom.jpg) no-repeat left bottom;
+}
+.ui-menu-item-hover{
+	
+}
+/*********************************************************待清除下拉控件样式*/
+.ui-input  {
+	position:absolute;
+}
+.ui-window-container .ui-input  {
+	position:absolute;
+	z-index:55;
+}
+.ui-input-link{
+	color:#FF6600;
+}
+.ui-input-forbid{
+	color:#999;
+	cursor:default;
+}
+.ui-table td.ui-input-container-singleSelect{
+	background:url(img/select_current.gif) no-repeat right top;
+	padding-right:20px;
+}
+.ui-table .ui-tr-even td.ui-input-container-singleSelect{
+	background:#EFEFEF url(img/select_current.gif) no-repeat right top;
+	padding-right:20px;
+}
+/*********************************************************待清除样式*/
+/*下拉框2.0样式*/
+.search-table .ui-select{
+	margin:-2px;
+	padding:1px;
+}
+.search-table .ui-select-container{
+	border:1px solid #73c4ac;
+	overflow:hidden;
+	margin-right:-3px;
+}
+.ui-table .ui-select-container{
+	overflow:hidden;
+	margin-right:-4px;
+	margin-top:-12px;
+}
+.ui-table .ui-select{
+}
+td.ui-td-wrap{
+	width:130px;
+}
+td.ui-td-nowrap{
+	white-space:nowrap;
+}
+.ui-td-wrap-div{
+	width:130px;
+	float:left;
+}
+.ui-float{
+	background:#e9f2ff;
+	border:1px solid #8eaace;
+	position:absolute;
+	margin-left:30px;
+	padding:5px;
+}
+.ui-float td{
+	background:#e9f2ff;
+	border:1px solid #e9f2ff;
+}
+
+
+
+

@@ -1,0 +1,50 @@
+
+/* CSS Document */
+
+/* 宋体************************************ */
+.clear {
+	clear:both;
+}
+.label_true {
+	color:#FFFFFF;
+	height:26px;
+	line-height:26px;
+	width:150px;
+	background: url("../css/images/shift_true.jpg");
+	text-align:center;
+	font-weight: bold;
+	float:left;
+	cursor: pointer;
+}
+.label_false {
+	cursor: pointer;
+	color:#000000;
+	height:26px;
+	line-height:26px;
+	width:150px;
+	background: url("../css/images/shift_false.jpg");
+	text-align:center;
+	font-weight: bold;
+	float:left;
+}
+.search-container-title {
+	font-weight: bold;
+	font-size:13px;	
+	float:left;
+	line-height:20px;
+}
+.search-container-button {
+/*	background: url("../css/images/search-container-button.jpg");*/
+	height:20px;
+	background-repeat:repeat-x;
+	line-height:20px;
+	width:150px;
+	float:left;
+	text-align:center;
+	margin-left:10px;
+}
+.search-container-button a {
+	font-size:13px;
+	font-weight: bold;	
+	color:#526790;
+}

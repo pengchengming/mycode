@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<process name="clientCall" xmlns="http://jbpm.org/4.4/jpdl">
+  <swimlane candidate-groups="ppGroup" name="ppgroupswimlane"/>
+   <start g="235,40,48,48" name="start1" zForm="clientCall">
+      <transition g="-47,-17" name="to 填单" status="申请" to="填单"/>
+   </start>
+   <task assignee="#{owner}" form="asking" g="215,106,92,52" name="填单" zForm="clientCall">
+      <transition g="-71,-17" name="to TA Leader审批" status="审核中" to="TA Leader审批"/>
+   </task>
+   <task candidate-groups="taLeader，" form="taLeader" g="214,200,92,52" name="TA Leader审批" zForm="clientCall">
+      <transition name="批准" to="pptake" g="-114,-22"/>
+   </task>
+   <task form="ppGroup" g="200,440,92,52" name="pptake" swimlane="ppgroupswimlane" zForm="clientCall">
+   <reminder duedate="2 days" repeat="1 day"/>
+       <transition g="-29,-14" name="批准" status="审批" to="ppcomplete"/>
+   </task>
+   <task form="ppGroup" g="200,440,92,52" name="ppcomplete" swimlane="ppgroupswimlane" zForm="clientCall">
+   <reminder duedate="2 days" repeat="1 day"/>
+       <transition g="-29,-14" name="批准" status="结束" to="end1"/>
+   </task>     
+   <end g="228,546,92,52" name="end1"/> 
+</process>

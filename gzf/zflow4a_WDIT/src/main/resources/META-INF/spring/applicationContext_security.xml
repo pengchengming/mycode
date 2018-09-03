@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security" 
+    xmlns:beans="http://www.springframework.org/schema/beans" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+        http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.2.xsd">
+    <!-- HTTP security configurations -->
+    <!-- auto-config true:使用spring默认配置，false:使用自行配置的URL use-expressions:使用表达式 -->
+    <http auto-config="false" use-expressions="true">
+        <!-- login-processing-url:登陆form请求地址, login-page：配置登陆URL也可以写具体的JSP文件地址 , authentication-failure-url：验证失败后跳转的URL, default-target-url:登陆成功后默认的目标URL -->        
+        <!-- invalidate-session 使session失效 , logout-success-url 推出成功后跳转的URL也可以写具体的JSP文件地址 ,  logout-url 推出请求的URL地址-->
+        <logout invalidate-session="true" logout-success-url="/logoutPage" logout-url="/j_spring_security_logout"/>   
+        <form-login login-processing-url="/j_spring_security_check" login-page="/wditLogin" 
+        	authentication-failure-url="/wditLogin" default-target-url="/wditIndex" />
+<!--    <remember-me key="remember-me" token-validity-seconds="3600" data-source-ref="dataSource"/> -->
+	    <remember-me key="remember-me" />
+<!--    Configure these elements to secure URIs in your application -->
+        <intercept-url pattern="/css/**" access="permitAll"/>
+        <intercept-url pattern="/data/**" access="permitAll"/>
+        <intercept-url pattern="/images/**" access="permitAll"/>
+        <intercept-url pattern="/styles/**" access="permitAll"/>
+        <intercept-url pattern="/script/**" access="permitAll"/>
+        <intercept-url pattern="/javascript/**" access="permitAll"/>
+        <intercept-url pattern="/wdit/assets/**" access="permitAll"/>
+        <intercept-url pattern="/wdit/createUI/**" access="permitAll"/>
+        <intercept-url pattern="/wdit/images/**" access="permitAll"/>
+        <intercept-url pattern="/bizChatServlet" access="permitAll"/>
+        <intercept-url pattern="/upload/**" access="permitAll"/>
+        <intercept-url pattern="/MP_verify_2VDJlBMygAmqq9hP.txt" access="permitAll"/>
+        <intercept-url pattern="/bizChatServlet1" access="permitAll"/>
+        <intercept-url pattern="/toBindUser" access="permitAll"/>
+        <intercept-url pattern="/bindUser" access="permitAll"/> 
+        <intercept-url pattern="/cubePhone/login" access="permitAll"/>
+        <intercept-url pattern="/phonelogin" access="permitAll"/>
+        <!-- 内容view页面  -->
+        <intercept-url pattern="/content/**" access="permitAll"/>
+        <!-- 数据库数据转JSON用 -->    
+        <intercept-url pattern="/data/service.json" access="permitAll"/>   
+        
+		<!-- zflow后台管理页面登陆权限访问 -->
+        <intercept-url pattern="/page/**" access="authenticated"/>
+        <!-- WEB-INF下所有的JSP都需要登陆权限才可以访问 -->
+        <intercept-url pattern="/WEB-INF/views/**" access="authenticated"/>
+		<!-- 登入登出都不拦截 -->
+		<intercept-url pattern="/wditLogin" access="permitAll"/>
+        <intercept-url pattern="/j_spring_security_check" access="permitAll"/>
+        <intercept-url pattern="/j_spring_security_logout" access="permitAll"/>
+        <!-- 登入成功后跳转首页需要验证权限 -->
+		<intercept-url pattern="/wditIndex" access="authenticated"/>
+		<!-- 登录页关于注册的匿名请求 -->
+        <intercept-url pattern="/organization/getByType" access="permitAll"/>
+        <intercept-url pattern="/user/save" access="permitAll"/>
+        <intercept-url pattern="/deviceContent/btContent" access="permitAll"/>
+        <intercept-url pattern="/deviceContent/btDevicecontent" access="permitAll"/>
+        <intercept-url pattern="/deviceContent/cloudCoupon" access="permitAll"/>
+        <intercept-url pattern="/deviceContent/question" access="permitAll"/>
+        <intercept-url pattern="/phoneLogin" access="permitAll"/>
+        <intercept-url pattern="/cubescore/scoredetail1" access="permitAll"/>
+        <intercept-url pattern="/companyRequest/httpRequest" access="permitAll"/>
+        <intercept-url pattern="/companyRequest/httpImageRequest" access="permitAll"/>
+         <intercept-url pattern="/user/bindCheckEmail" access="permitAll"/>
+         <intercept-url pattern="/export/qualifications6" access="permitAll"/>
+        <intercept-url pattern="/export/qualifications61" access="permitAll"/>
+        <intercept-url pattern="/export/pretrial4" access="permitAll"/>
+        <intercept-url pattern="/export/pretrial41" access="permitAll"/>
+        <intercept-url pattern="/export/request_pretrial_1_Url" access="permitAll"/>
+        <intercept-url pattern="/export/housing_management" access="permitAll"/>
+        <intercept-url pattern="/export/intranetCogradient" access="permitAll"/>
+        <intercept-url pattern="/export/intranet_take_from_extranet" access="permitAll"/>
+        <intercept-url pattern="/export/intranet_post_data_to_extranet" access="permitAll"/>
+        <!-- 拦截所有的资源请求 -->
+        <intercept-url pattern="/**" access="authenticated" />
+        
+        <custom-filter ref="menuItemFilter" after="FILTER_SECURITY_INTERCEPTOR"/> 
+        <custom-filter ref="NTLMLoginFilter" before="FORM_LOGIN_FILTER" />
+        <custom-filter ref="customLoginFilter" after="FORM_LOGIN_FILTER" />
+    </http>
+	  
+	<authentication-manager alias="customAuthenticationManager">
+		<!-- 加入开发人员自定义的Provider -->
+		<authentication-provider ref="customAuthenticationProvider" />
+	</authentication-manager>	
+	
+	<authentication-manager alias="NTLMAuthenticationManager">
+		<!-- 加入开发人员自定义的Provider -->
+		<authentication-provider ref="NTLMAuthenticationProvider" />
+	</authentication-manager>	
+	
+		 
+	<beans:bean id="customAuthenticationProvider"
+		class="com.bizduo.zflow.security.CustomAuthenticationProvider" />
+
+	<beans:bean id="NTLMAuthenticationProvider"
+		class="com.bizduo.zflow.security.NTLMAuthenticationProvider" />
+
+	<beans:bean id="loginEntryPoint"
+		class="org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint">
+		<!-- 默认登录页的url -->
+		<beans:constructor-arg value="/wditLogin" />
+	</beans:bean>
+	
+	<beans:bean id="NTLMLoginFilter" class="com.bizduo.zflow.filter.NTLMLoginFilter">
+		<!-- 校验登录是否有效的虚拟url -->
+		<beans:property name="filterProcessesUrl" value="/ntlm" />
+		<beans:property name="authenticationManager" ref="NTLMAuthenticationManager" />
+		<beans:property name="usernameParameter" value="username" />
+		<beans:property name="passwordParameter" value="password" />
+		<beans:property name="authenticationSuccessHandler">
+			<!-- 自定义登录成功后的处理handler -->
+			<beans:bean class="com.bizduo.zflow.handler.CustomLoginHandler">
+				<!-- 登录成功后的默认url -->
+				<beans:property name="defaultTargetUrl" value="/wditIndex" />
+			</beans:bean>
+		</beans:property>
+		<beans:property name="authenticationFailureHandler">
+			<beans:bean
+				class="org.springframework.security.web.authentication.SimpleUrlAuthenticationFailureHandler">
+				<!-- 登录失败后的默认Url -->
+				<beans:property name="defaultFailureUrl" value="/wditLogin?error" />
+			</beans:bean>
+		</beans:property>
+	</beans:bean>
+
+	<beans:bean id="customLoginFilter" class="com.bizduo.zflow.filter.CustomLoginFilter">
+		<!-- 校验登录是否有效的虚拟url -->
+		<beans:property name="filterProcessesUrl" value="/checklogin" />
+		<beans:property name="authenticationManager" ref="customAuthenticationManager" />
+		<beans:property name="usernameParameter" value="username" />
+		<beans:property name="passwordParameter" value="password" />
+		<beans:property name="authenticationSuccessHandler">
+			<!-- 自定义登录成功后的处理handler -->
+			<beans:bean class="com.bizduo.zflow.handler.CustomLoginHandler">
+				<!-- 登录成功后的默认url -->
+				<beans:property name="defaultTargetUrl" value="/wditIndex" />
+			</beans:bean>
+		</beans:property>
+		<beans:property name="authenticationFailureHandler">
+			<beans:bean
+				class="org.springframework.security.web.authentication.SimpleUrlAuthenticationFailureHandler">
+				<!-- 登录失败后的默认Url -->
+				<beans:property name="defaultFailureUrl" value="/wditLogin?error" />
+			</beans:bean>
+		</beans:property>
+	</beans:bean>
+
+	<beans:bean id="customLogoutFilter" class="com.bizduo.zflow.filter.CustomLogoutFilter">
+		<!-- 处理退出的虚拟url -->
+		<beans:property name="filterProcessesUrl" value="/logout" />
+		<!-- 退出处理成功后的默认显示url -->
+		<beans:constructor-arg index="0" value="/wditLogin?logout" />
+		<beans:constructor-arg index="1">
+			<!-- 退出成功后的handler列表 -->
+			<beans:array>
+				<beans:bean id="securityContextLogoutHandler"
+					class="org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler" />
+				<!-- 加入了开发人员自定义的退出成功处理 -->
+				<beans:bean id="customLogoutSuccessHandler" class="com.bizduo.zflow.handler.CustomLogoutHandler" />
+			</beans:array>
+		</beans:constructor-arg>
+	</beans:bean>	
+	  
+</beans:beans> 

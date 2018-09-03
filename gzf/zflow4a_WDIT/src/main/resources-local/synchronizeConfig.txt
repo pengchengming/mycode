@@ -1,0 +1,13 @@
+wdit_info_request  表设置type：1 申请，2 预审，数据同步 生成json 存放在wdit_info 表中
+
+ syn.synImagePath -- 外网图片存放路径
+
+ 
+
+
+
+ syn.synWebPath  --内网访问 外网服务器路径
+ syn.intranet_take_from_extranet  --内网访问  外网获取申请Json路径
+ syn.synImageUrl --内网访问  外网获取所以照片路径的Json
+ syn.synUploadImage -- 内网下载图片存放路径
+ 

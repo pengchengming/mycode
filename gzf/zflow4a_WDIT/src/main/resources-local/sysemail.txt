@@ -1,0 +1,7 @@
+email.hostName --发送邮箱的服务器
+email.fromEmail  --从哪个邮箱发送 现在写的是薛栋商度的邮箱
+email.formName -- 发件人名字  公租房系统
+email.authName -- 登录邮箱名
+email.authPassword -- 登录邮箱密码
+email.subject-- 邮件主题 邮箱绑定确认邮件
+email.charset-- 邮件字符

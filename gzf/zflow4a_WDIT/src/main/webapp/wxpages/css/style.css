@@ -1,0 +1,109 @@
+@charset "utf-8";
+* {
+	padding: 0;
+	margin: 0 auto;
+	font-size: 1.02em;
+	/*font-size: 13px;*/
+	font-family: "微软雅黑";
+}
+body {
+	font: normal 100% Helvetica, Arial, sans-serif;
+	background-color:#ebebeb;
+	padding:10px;
+}
+content {
+	background-color: #fff;
+	border: 1px solid #CCC;
+	border-radius:5px;
+	margin: 10px 0;
+	padding: 10px;
+	display:block;
+}
+li {
+	padding-bottom:7px;
+	list-style-type: decimal;
+}
+clear {
+	clear: both;
+	height: 0;
+}
+.club_button {
+	background-image:url(../images/club_button.jpg);
+	height:58px;
+	width:172px;
+	cursor: pointer;
+	border:0;
+	color:#fff;
+	font-size:1.2em;
+}
+bottom_div {
+	text-align:center;
+	margin:60px 0 0;
+}
+a {
+	color: #003399;
+	position:relative;
+	top:15px;
+	left:5px;
+	text-decoration: underline;
+}
+.list {
+
+}
+.list tr:hover {
+	color:#ff0000;	
+}
+.list th {
+	height:30px;
+	padding:0 2px;
+	text-align:left;
+}
+.list td {
+	height: 50px;
+	background-image: url(../images/list_bg.jpg);
+	background-repeat: repeat-x;
+	padding: 0 2px;
+	text-align: left;
+	background-position: bottom;
+}
+content01 {
+	background-image: url(../images/list_bg.jpg);
+	background-repeat: repeat-x;
+	background-position: bottom;
+	padding:1em 0;
+	display:block;
+}
+content01 h1 {
+	padding-bottom:1em;
+	font-size:1.1em;
+}
+content01 h1 {
+	line-height:1.1em;
+}
+content01 li {
+	background-image: url(../images/list_icon.jpg);
+	background-repeat: no-repeat;
+	background-position: left 6px;
+	list-style-type: none;
+	padding-left:15px;
+	font-size:0.7em;
+}
+.table {
+	border:1px dashed #e5e5e5;
+	border-collapse: collapse
+}
+.table tr:hover {
+	color:#ff0000;	
+}
+.table th {
+	height:30px;
+	padding:0 2px;
+	text-align:left;
+	border:1px dashed #e5e5e5;
+}
+.table td {
+	height: 50px;
+	padding: 0 2px;
+	text-align: left;
+	border:1px dashed #e5e5e5;
+}

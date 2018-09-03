@@ -1,0 +1,57 @@
+@charset "utf-8";
+/* CSS Document */
+* {
+	margin:0 auto;
+	padding:0;
+}
+body {
+	position:realtive;
+	background: #e5adba;
+}
+.download01 {
+    background: url("images/download_bg01.jpg") no-repeat;
+	height:142px;
+	width:501px;
+	padding:70px  10px 10px 170px;
+	position:absolute;
+	top:50%;
+	left:50%;
+	margin-left:-340px;
+	margin-top:-106px;
+}
+.download01 h1{
+	font-size:20px;
+	font-family:"Microsoft YaHei";
+	line-height:30px;
+}
+.download01 a{
+	font-size:16px;
+	font-family:"Microsoft YaHei";
+	height:60px;
+	display:table-cell;
+	vertical-align:middle;
+}
+.download01 h2{
+	font-size:16px;
+	font-family:"Microsoft YaHei";
+}
+.download02 {
+    background: url("images/download_bg02.jpg") no-repeat;
+	height:142px;
+	width:501px;
+	padding:70px  10px 10px 170px;
+	position:absolute;
+	top:50%;
+	left:50%;
+	margin-left:-340px;
+	margin-top:-106px;
+}
+.download02 h1{
+	font-size:20px;
+	font-family:"Microsoft YaHei";
+	line-height:30px;
+}
+.download02 h2{
+	font-size:16px;
+	font-family:"Microsoft YaHei";
+}

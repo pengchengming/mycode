@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<process name="customerfollowup" xmlns="http://jbpm.org/4.4/jpdl">
+
+  <start g="11,12,80,40">
+      <transition g="-31,-20" name="to task1" to="followup"/>
+  </start>
+   <task g="110,12,92,52" name="followup">
+      <transition g="-43,-30" name="to exclusive1" to="exclusive1"/>
+   </task>
+   <decision g="272,16,48,48" name="exclusive1">
+      <transition g="924,45:-50,-22" name="to end1" to="end1"/>
+      <transition g="-42,-60" name="to assigndesigner" to="assigndesigner"/>
+   </decision>
+   <end g="902,78,48,48" name="end1"/>
+   <task g="228,79,150,52" name="assigndesigner">
+      <transition g="-46,-42" name="to solutionquota" to="solutionquota"/>
+   </task>
+   <task g="433,72,92,52" name="solutionquota">
+      <transition g="-31,-17" name="to exclusive2" to="exclusive2"/>
+      <transition g="1,-62" name="to specialprice" to="specialprice"/>
+   </task>
+   <decision g="684,82,48,48" name="exclusive2">
+      <transition g="-50,-22" name="to end1" to="end1"/>
+      <transition g="-112,-22" name="to signprecontract" to="signprecontract"/>
+   </decision>
+   <sub-process g="437,130,92,52" name="specialprice"/>
+   <task g="663,228,92,52" name="signprecontract">
+      <transition g="-71,-22" name="to measure" to="measure"/>
+   </task>
+   <task g="33,222,92,52" name="measure">
+      <transition g="-50,35" name="to exclusive3" to="exclusive3"/>
+   </task>
+   <decision g="31,365,48,48" name="exclusive3">
+      <transition g="135,323:-41,-53" name="to zhucaibudget" to="zhucaibudget"/>
+      <transition g="-35,-20" name="to jicaibudget" to="jicaibudget"/>
+      <transition g="121,444;123,452:-56,36" name="to labourbudget" to="labourbudget"/>
+   </decision>
+   <task g="182,293,114,52" name="zhucaibudget">
+      <transition g="-34,-24" name="to exclusive4" to="exclusive4"/>
+   </task>
+   <task g="182,360,114,52" name="jicaibudget">
+      <transition g="-40,-22" name="to exclusive5" to="exclusive5"/>
+   </task>
+   <task g="192,426,118,52" name="labourbudget">
+      <transition g="-41,-25" name="to exclusive6" to="exclusive6"/>
+   </task>
+   <decision g="350,296,48,48" name="exclusive4">
+      <transition g="374,269;240,271:-39,-13" name="to zhucaibudget" to="zhucaibudget"/>
+      <transition g="-70,-31" name="to budgetexclusive" to="budgetexclusive"/>
+   </decision>
+   <decision g="347,367,48,48" name="exclusive5">
+      <transition g="372,348;234,346:-32,-17" name="to jicaibudget" to="jicaibudget"/>
+      <transition g="-71,-19" name="to budgetexclusive" to="budgetexclusive"/>
+   </decision>
+   <decision g="347,430,48,48" name="exclusive6">
+      <transition g="370,417;248,415:-47,-8" name="to labourbudget" to="labourbudget"/>
+      <transition g="-51,-7" name="to budgetexclusive" to="budgetexclusive"/>
+   </decision>
+   <decision g="510,361,48,48" name="budgetexclusive">
+      <transition g="-58,-31" name="to signcontract" to="signcontract"/>
+   </decision>
+   <task g="603,363,92,52" name="signcontract">
+      <transition g="-125,-22" name="to ContractExecution" to="ContractExecution"/>
+      <transition g="-78,-22" name="to payment1" to="payment1"/>
+   </task>
+   <task g="709,313,92,52" name="payment1"/>
+   <end g="907,361,48,48" name="end2"/>
+   <sub-process g="698,419,151,52" name="ContractExecution">
+      <transition g="-50,-22" name="to end2" to="end2"/>
+   </sub-process>
+</process>

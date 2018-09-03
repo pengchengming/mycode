@@ -1,0 +1,49 @@
+// paint.h : main header file for the PAINT application
+//
+
+#if !defined(AFX_PAINT_H__665E94C6_CB12_4BE2_BD11_956611699BCE__INCLUDED_)
+#define AFX_PAINT_H__665E94C6_CB12_4BE2_BD11_956611699BCE__INCLUDED_
+
+#if _MSC_VER > 1000
+#pragma once
+#endif // _MSC_VER > 1000
+
+#ifndef __AFXWIN_H__
+	#error include 'stdafx.h' before including this file for PCH
+#endif
+
+#include "resource.h"       // main symbols
+
+/////////////////////////////////////////////////////////////////////////////
+// CPaintApp:
+// See paint.cpp for the implementation of this class
+//
+
+class CPaintApp : public CWinApp
+{
+public:
+	CPaintApp();
+
+// Overrides
+	// ClassWizard generated virtual function overrides
+	//{{AFX_VIRTUAL(CPaintApp)
+	public:
+	virtual BOOL InitInstance();
+	//}}AFX_VIRTUAL
+
+// Implementation
+	//{{AFX_MSG(CPaintApp)
+	afx_msg void OnAppAbout();
+		// NOTE - the ClassWizard will add and remove member functions here.
+		//    DO NOT EDIT what you see in these blocks of generated code !
+	//}}AFX_MSG
+	DECLARE_MESSAGE_MAP()
+};
+
+
+/////////////////////////////////////////////////////////////////////////////
+
+//{{AFX_INSERT_LOCATION}}
+// Microsoft Visual C++ will insert additional declarations immediately before the previous line.
+
+#endif // !defined(AFX_PAINT_H__665E94C6_CB12_4BE2_BD11_956611699BCE__INCLUDED_)

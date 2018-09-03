@@ -1,0 +1,161 @@
+ <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html> 
+	<head>  
+		<meta content="text/html; charset=GBK" http-equiv="Content-Type">
+</head>
+
+<style type="text/css">
+* {
+	padding:0;
+	margin:0 auto;
+	}
+#selectable {
+	width: 98%; 
+	height: 353px;
+	border-collapse: collapse;
+	color:#333333;
+	font-size:12px;
+}
+#selectable th {
+	border:1px solid #DAE4E3;
+	font-weight:normal;
+	height: 2em;
+	line-height: 2em;
+	overflow: hidden;
+	background-color:#F1F5F4;
+	padding:5px 8px;
+	width:180px;
+	text-align:right;
+}
+#selectable td {
+	border:1px solid #DAE4E3;
+	padding:5px 8px;
+}
+.ui-gable{
+	float:left;
+}
+.red {
+	color:#FF0000;
+	padding:0 10px;
+}
+.button {
+	border:1px solid #7f9db9;
+	background:-moz-linear-gradient(top center,#fff,#d3d3d3);
+	height:30px;
+	line-height:30px;
+	width:80px;
+	margin-right:10px;
+	cursor:pointer;
+}
+input,select,textarea {
+	padding:2px;
+	width:300px;
+}
+.top {
+	width:100%;
+	background-image:url(../images/ccm/top_bg.jpg);
+	background-repeat:repeat-x;
+	height:80px;
+	padding-left:20px;
+}
+option {
+	height:18px;
+}
+.logo {}
+.button01 {
+	background-image:url(../images/ccm/button01.jpg);
+	height:42px;
+	width:115px;
+	border:1px;
+	margin-right:10px;
+	cursor:pointer;
+}
+.button02 {
+	background-image:url(../images/ccm/button02.jpg);
+	height:42px;
+	width:115px;
+	border:1px;
+	cursor:pointer;
+}
+</style>
+<body> 
+	
+<Form id="formId" name="formName" action="http://10.1.1.101:8080/zflow/ppfilterfeedback"    method ="post"   >
+			<div id="Operating">
+				<input id="taLeader" name ="ccmType"   value="taLeader">	
+				<input id="userId" name ="userId"   value="9">
+		  	<input  id="id" name="id" value="${id}">
+		  </div>
+			<table id="selectable">	
+			<tbody> 
+	        <tr>
+	        	<th class="deme ui-droppable"><div type="textDate"><div><label fieldid="field" type="label"><div><label fieldid="field" type="label"></label><div>Number/编号：</div></div><label></label></label></div></div></th>
+	            <td class="deme ui-droppable"><div class=" ui-gable" type="text"><div id="input_name">${clientCallId}</div>  </div></td>
+	        </tr>   <tr>
+	        	<th class="deme ui-droppable"><div type="textDate"><div><label fieldid="field" type="label"><div><label fieldid="field" type="label"></label><div>Posting Date/创建日期：</div></div><label></label></label></div></div></th>
+	            <td class="deme ui-droppable"><div class=" ui-gable" type="text"><div id="input_name">${createDate}</div>  </div></td>
+	        </tr>    
+	        <tr>
+	        	<th class="deme ui-droppable"><div type="textDate"><div><label fieldid="field" type="label"><div><label fieldid="field" type="label"></label><div>Name of caller/姓名：</div></div><label></label></label></div></div></th>
+	            <td class="deme ui-droppable"><div class=" ui-gable" type="text"><div id="input_name"><input fieldid="4" id="name" type="text" value="${name}"  name="name"></div>  </div><span class="red">*</span></td>
+	        </tr>   
+	        <tr>
+	            <th class="deme ui-droppable"><div type="textDate"><div><label fieldid="field" type="label"><div><label fieldid="field" type="label"></label><div>Company/公司：</div></div><label>  </label></label></div></div></th>
+	            <td class="deme ui-droppable"><div class=" ui-gable" type="text"><div id="input_company"><input fieldid="5" id="company" type="text" value="${company}" name="company" ></div>  </div><span class="red">*</span></td>
+	        </tr>
+	        <tr>
+	        	<th class="deme ui-droppable"><div type="textDate"><div><label fieldid="field" type="label"><div><label fieldid="field" type="label"></label><div>Department/部门：</div></div><label>  </label></label></div></div></th>
+	            <td class="deme ui-droppable"><div class=" ui-gable" type="text"><div id="input_department"><input fieldid="3" id="department" type="text" value="${department}" name="department" ></div>  </div></td>
+	        </tr> 
+	        <tr>
+	        	<th class="deme ui-droppable"><div type="textDate"><div>
+	            <label fieldid="field" type="label"><div><label fieldid="field" type="label"></label><div>Competence Center/行业：</div></div><label>  </label></label></div></div></th>
+	            <td class="deme ui-droppable"><div class=" ui-gable" type="select"><div id="input_CompetenceCenter"><select type="select" fieldid="2" id="CompetenceCenter" name="CompetenceCenter" value="${CompetenceCenter}">								
+	            <option value="CC" id="">CC</option>								
+	            <option value="Auto" id="">Auto</option>								
+	            <option value="CG&amp;R" id="">CG&amp;R</option>								
+	            <option value="Energy&amp;Chem" id="">Energy&amp;Chem</option>
+	            <option value="EPHT&amp;Ops" id="">EPHT&amp;Ops</option>
+	            <option value="FS" id="">FS</option>
+		        <option value="InfoCom" id="">InfoCom</option>							
+		        <option value="Int FS" id="">Int FS</option>								
+		        <option value="Machinery" id="">Machinery</option>								
+		        <option value="Mnc&amp;Int" id="">Mnc&amp;Int</option>
+		        <option value="PE&amp;Intl M&amp;A" id="">PE&amp;Intl M&amp;A</option>
+		        <option value="Pharma&amp;HC" id="">Pharma&amp;HC</option>
+		        <option value="Public Services" id="">Public Services</option>
+		        <option value="Real Estate" id="">Real Estate</option>
+		        <option value="Transport" id="">Transport</option>							
+	        </select></div>
+	          </div><span class="red">*</span>
+	        </td>
+	        </tr>
+	        <tr>
+	        	<th class="deme ui-droppable"><div type="textDate"><div><label fieldid="field" type="label"><div><label fieldid="field" type="label"></label><div>Revenue/营业额：</div></div><label>  </label></label></div></div></th>
+	            <td class="deme ui-droppable"><div class=" ui-gable" type="text"><div id="input_revenue"><input fieldid="7" id="revenue" type="text" value="${revenue}" name="revenue" ></div>  </div></td>
+	        </tr>
+	        <tr>
+	        	<th class="deme ui-droppable"><div type="textDate"><div><label fieldid="field" type="label"><div><label fieldid="field" type="label"></label><div>phone1/电话1：</div></div><label>  </label></label></div></div></th>
+	            <td class="deme ui-droppable"><div class=" ui-gable" type="text"><div id="input_phone1"><input fieldid="6" id="phone1" type="text" value="${phone1}"  name="phone1" ></div>  </div><span class="red">*</span></td>
+	        </tr>
+	        <tr>
+	        	<th class="deme ui-droppable"><div type="textDate"><div><label fieldid="field" type="label"><div><label fieldid="field" type="label"></label><div>phone2/电话2：</div></div><label>  </label></label></div></div></th>
+	            <td class="deme ui-droppable"><div class=" ui-gable" type="text"><div id="input_phone2"><input fieldid="8" id="phone2" type="text" value="${phone2}"  name="phone2" ></div>  </div></td>
+	        </tr>
+	        <tr>
+	        	<th class="deme ui-droppable"><div type="textDate"><div><label fieldid="field" type="label"><div><label fieldid="field" type="label"></label><div>Topics/主题：</div></div><label>  </label></label></div></div></th>
+	            <td class="deme ui-droppable"><div class=" ui-gable" type="text"><div id="input_Topics"><input fieldid="9" id="Topics" type="text" value="${Topics}"  name="Topics" ></div>  </div></td>
+	        </tr>
+	        <tr>
+	        	<th class="deme ui-droppable"><div type="textDate"><div><label fieldid="field" type="label"><div><label fieldid="field" type="label"></label><div>Special requirement from client/特别要求：</div></div><label>  </label></label></div></div></th>
+	            <td class="deme ui-droppable"><div class=" ui-gable" type="textarea"><div id="input_specialRFC"><textarea type="textarea" fieldid="1" id="specialRFC"   name="specialRFC" >${specialRFC}</textarea></div>  </div></td>
+	        </tr>
+	       </tbody>
+	       </table> 
+			<div style=" margin:10px 200px; ">    
+					<input id="resultValue" name="resultValue" value="批准">
+					<input class="button" type="submit" value="批准">
+			</div>
+     </form>
+	</body>
+	</html>

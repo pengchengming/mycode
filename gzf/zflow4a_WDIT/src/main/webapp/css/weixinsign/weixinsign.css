@@ -1,0 +1,69 @@
+@charset "utf-8";
+* {
+	padding: 0;
+	margin: 0 auto;
+	font-size: 1em;
+	/*font-size: 13px;*/
+	font-family: "微软雅黑";
+}
+body {
+	font: normal 100% Helvetica, Arial, sans-serif;
+	background-color:#ebebeb;
+	padding:10px;
+}
+container{
+	display:block;
+}
+wrapper h1 {
+	color: #066A75;
+	font-size: 2.5em;
+	line-height: 2em;
+	font-weight: bold;
+	padding: 2px 0 30px;
+	text-align: center;
+}
+wrapper label {
+    color: #405C60;
+	display:block;
+	font-size: 1em;
+	line-height:1.5em;
+}
+
+wrapper input{
+    -moz-box-sizing: content-box;
+    border: 1px solid #B2B2B2;
+    border-radius: 3px;
+    box-shadow: 0 1px 4px 0 rgba(168, 168, 168, 0.6) inset;
+    margin-top: 4px;
+    padding: 10px 5px 10px 32px;
+    width: 90%;
+}
+wrapper input:active,wrapper input:focus{
+    background: none repeat scroll 0 0 rgba(238, 236, 240, 0.2);
+    border: 1px solid rgba(91, 90, 90, 0.7);
+    box-shadow: 0 1px 4px 0 rgba(168, 168, 168, 0.9) inset;
+}
+
+wrapper .button{
+    background: none repeat scroll 0 0 #3D9DB3;
+    border: 1px solid #1C6C7A;
+    border-radius: 3px;
+    box-shadow: 0 1px 6px 4px rgba(0, 0, 0, 0.07) inset, 0 0 0 0 #FEFEFE, 0 2px 1px 1px #D2D2D2;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-family: 'BebasNeueRegular','Arial Narrow',Arial,sans-serif;
+    font-size: 1.5em;
+    margin: 10px 0;
+    padding: 0.3em;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+    transition: all 0.2s linear 0s;
+    width: 40%;
+}
+content {
+	background-color: #fff;
+	border: 1px solid #CCC;
+	border-radius:5px;
+	margin: 10px 0;
+	padding: 10px;
+	display:block;
+}

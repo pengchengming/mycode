@@ -1,0 +1,230 @@
+ <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html> 
+	<head>  
+		<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+</head>
+ <style type="text/css">
+.barstyle {scrollbar-face-color:dddddd; scrollbar-shadow-color:f6fcea;
+scrollbar-highlight-color:ffffff; scrollbar-3dlight-color:d8e2c5;
+scrollbar-darkshadow-color:ffffff; scrollbar-track-color:f6fcea;
+scrollbar-arrow-color:ffffff;}
+a:link
+{
+	color: #3399FF;font-size:8pt; text-decoration:none
+}
+a:visited
+{
+	color: #3399ff;font-size:8pt; text-decoration:none
+}
+a:active
+{
+	color: #FF9900;font-size:8pt; text-decoration:none
+}
+a:link.001
+{
+	color: #5F5F5F;font-size:8pt; text-decoration:none
+}
+a:visited.001
+{
+	color: #808080;font-size:8pt; text-decoration:none
+}
+a:active.001
+{
+	color: #FF9900;font-size:8pt; text-decoration:none
+}
+input {
+	border:1px solid #718743;
+	font-size: 8pt;
+	font-family:Arial;
+	background-color: #E8E8E8;
+}
+textarea {border:1px solid #718743; font-size: 8pt; font-family:Arial; background-color: #E8E8E8}
+select {border:1px solid #718743; font-size: 8pt; font-family:Arial; width:278px;background-color: #FFFAFF}
+table {font-size:8pt }
+body
+{
+	font-family:  Arial,Verdana, Helvetica;
+	color: #666633; font-size:8pt;
+}
+
+h1
+{
+	font-family: Times New Roman, Times;
+	color: #999933;font-size:8pt
+}
+h2
+{
+	font-family: Times New Roman, Times;
+	color: #CC9900;font-size:8pt
+}
+h3
+{
+	font-family: Times New Roman, Times;
+	color: #006699;font-size:8pt
+}
+h4
+{
+	font-family: Times New Roman, Times;
+	color: #999900;font-size:8pt
+}
+h5
+{
+	font-family: Times New Roman, Times;
+	color: #FF9900;font-size:8pt
+}
+h6
+{
+	font-family: Times New Roman, Times;
+	color: #3366CC;font-size:8pt
+}
+.tdfont01 {border-bottom: 2px solid #FFFFFF;font-weight: bold; background-color: #F1F5F5; font-family:Verdana; font-size:8pt}
+.tdfont02 {font-size:14px}
+.menutd {font-size:4pt;font-family: Arial, Helvetica}
+.commontd {
+    border: 1px solid #DAE4E3;
+    font-family: Arial;
+    font-size: 8pt;
+    padding: 3px;
+}
+.commontd_t {border-top: 1px solid #DAE4E3; font-size:8pt; font-family:Arial}
+.commontd_L {border-left: 1px solid #DAE4E3; font-size:8pt; font-family:Arial}
+.commontable {
+	border-right:1px solid #DAE4E3; border-bottom:1px solid #DAE4E3; table-border-color-light: rgb(255,204,102);
+	table-border-color-dark: rgb(204,153,102); font-size:8pt }
+.common2table {
+	border-bottom:1px solid #E6EDEC; table-border-color-light: rgb(255,204,102);
+	table-border-color-dark: rgb(204,153,102); font-size:8pt  }
+.commontable02 {	border-left:1px solid #B7D29F; border-right:1px solid #B7D29F; border-bottom:1px solid #B7D29F; table-border-color-light: rgb(255,204,102);
+	table-border-color-dark: rgb(204,153,102); font-size:8pt; margin-left:2 }
+.input01 {border:1px solid #99A363; font-size: 12px; background-color: #E8EADF}
+.textbox {font-family: Verdana, Arial, Helvetica;color: #000000;font-size:8pt}
+
+.ui-gable {float: left;}
+</style>
+<script>
+function qualifiedFun(me){
+	var val=me.value;
+	if(val=="Please specify here if needed"){
+		//$("#specifyNeeded").attr("type","text") ;
+		document.getElementById("specifyNeeded").type="text";
+	}else { 
+		document.getElementById("specifyNeeded").type="hidden";
+	}
+}
+
+function checkform(){
+	var isspecify=false;
+	 var qualifieds = document.getElementsByName("qualifiedStr");
+	 for(var i=0;i<qualifieds.length;i++){
+	  if(qualifieds[i].checked==true){
+		  if(qualifieds[i].value=="Please specify here if needed") isspecify=true;
+	  }
+	 }
+	if(isspecify){ 
+		var specifyNeeded= document.getElementById("specifyNeeded").value;
+		if(!specifyNeeded){ 
+			document.getElementById("specifyNeeded").type="text";
+			alert("请填写备注");
+			return false;
+		} else if(specifyNeeded.length>80){
+			alert("备注信息最长为80字符")
+			return false;
+		}
+	}
+	return true;
+}
+</script>
+<body>   
+	<table class="commontable" width="98%" cellpadding="0" style="margin-top:5px;margin-left:5px;border-collapse:collapse">
+		 <tbody>
+	        <tr>
+        	  <td class="commontd" bgcolor="#E6EDEC" align="center" height="25" colspan="2"><b>Client Call / 客户来电</b></td>
+            </tr>
+			<tr>
+			<td style="border: 1px solid #DAE4E3;">
+<table id="create_Table_createDiv" width="100%" cellspacing="0" cellpadding="0" border="0" enableemptycontentrender="true" rules="all">
+					<thead>
+						<tr class="trtitlist">	
+							<td class="commontd" bgcolor="#F1F5F4" align="center" height="50">ID/<br/>编号</td>
+							<td class="commontd" bgcolor="#F1F5F4" align="center" height="50">Date/<br/>日期</td>
+							<td class="commontd" bgcolor="#F1F5F4" align="center" height="50">Contact/<br/>联系人</td>
+							<td class="commontd" bgcolor="#F1F5F4" align="center" height="50">Client Name/<br/>公司</td>
+							<td class="commontd" bgcolor="#F1F5F4" align="center" height="50">Department/<br/>部门</td>
+							<td class="commontd" bgcolor="#F1F5F4" align="center" height="50">CC/<br/>行业</td>
+							<td class="commontd" bgcolor="#F1F5F4" align="center" height="50">Revenue/<br/>营业额</td>
+							<td class="commontd" bgcolor="#F1F5F4" align="center" height="50">Phone/<br/>电话</td>
+							<td class="commontd" bgcolor="#F1F5F4" align="center" height="50">Mobile Phone/<br/>手机</td>
+							<td class="commontd" bgcolor="#F1F5F4" align="center" height="50">Email/<br/>邮箱</td>
+							<td class="commontd" bgcolor="#F1F5F4" align="center" height="50">Topics/<br/>主题</td>
+							<td class="commontd" bgcolor="#F1F5F4" align="center" height="50">Office/<br/>办公室</td>
+							<td class="commontd" bgcolor="#F1F5F4" align="center" height="50">Info Source/<br/>信息来源</td> 
+							<td class="commontd" bgcolor="#F1F5F4" align="center" height="50">Special Requirement From Client /<br/>特别要求</th> 
+							
+						</tr>
+						<tr style="" >
+							<td class="commontd" align="center" height="22">${clientCallId}</td>
+							<td class="commontd" align="center" height="22">${createDate}</td>
+							<td class="commontd" align="center" height="22">${name}</td>
+							<td class="commontd" align="center" height="22">${company}</td>
+							<td class="commontd" align="center" height="22">${department}</td>
+							<td class="commontd" align="center" height="22">${CompetenceCenter}</td>
+							<td class="commontd" align="center" height="22">${revenue}</td>
+							<td class="commontd" align="center" height="22">${phone1}</td>
+							<td class="commontd" align="center" height="22">${phone2}</td>
+							<td class="commontd" align="center" height="22">${email}</td>
+							<td class="commontd" align="center" height="22">${Topics}</td> 
+							<td class="commontd" align="center" height="22">${office}</td>
+							<td class="commontd" align="center" height="22">${infosource}</td>
+							<td class="commontd" align="center" height="22">${specialRFC}</td>  
+						</tr>
+					</thead>
+				</table>
+			</td>
+            </tbody>
+            </table>
+            <table class="commontable" width="98%" cellpadding="0" style="margin-top:5px;margin-left:5px;border-collapse:collapse">
+            <tr>
+            	<td class="commontd" bgcolor="#E6EDEC" align="center" height="25" colspan="3"> </td>
+            </tr>
+            <tr>
+		 		<td class="commontd" width="150" align="center" height="25" style="padding:0;border-bottom:0;">
+		 			<Form id="formId" name="formName" action="http://sha-proweb-1.rolandberger.net:8088/zflow/ppfilterfeedback"    method ="post"   onsubmit="checkform()" > 
+					  	<input style="display:none" id="ppFeedback" name ="ccmType"   value="ppFeedback">	
+					  	<input style="display:none" id="id" name="id" value="${id}">  
+							<input style="display:none" id="userId" name ="userId"   value="${userId}">
+				 		<table width="100%" border="0"  cellspacing="0" id="ppfeedbacktable" style="border-collapse:collapse">
+							<tr>
+								<td width="150" align="center" height="25">
+									<div>
+										<label type="label" fieldid="field">
+											<div>Feedback/反馈</div>
+										</label>
+									</div>
+								</td>
+								<td height="">
+								 	<p style="text-align:left"><input type="radio" value="Qualifed lead,converted to proposal" name="qualifiedStr" style="width:30px;background-color:#fff;border:0"  onchange="qualifiedFun(this)"><font color="#008080">  Qualifed lead,converted to proposal </font></p>
+			 						<p style="text-align:left"><input type="radio" value="Initial stage" name="qualifiedStr" style="width:30px;background-color:#fff;border:0"  onchange="qualifiedFun(this)" ><font color="#008080">  Initial stage</font></p>
+			 						<p style="text-align:left"><input type="radio" value="Skip" name="qualifiedStr" style="width:30px;background-color:#fff;border:0"  onchange="qualifiedFun(this)"><font color="#008080"> Skip</font></p>
+									<p style="text-align:left"><input type="radio" value="Please specify here if needed"  name="qualifiedStr" style="width:30px;background-color:#fff;border:0"  onchange="qualifiedFun(this)"><font color="#008080">  Please specify here if needed <input style="padding:4px;width:150px" type="hidden" id="specifyNeeded" name="specifyNeeded" ></font></p>
+		 						</td>
+							</tr>
+							<tr>
+								<td class="commontd_t" width="150" align="center" height="25">Follow-up action</td>
+								 <td class="commontd_t" height="25" style="text-align:left">
+								 	 <textarea id="note" name="note" fieldid="1" type="textarea" style="padding:2px;width:300px;"></textarea>
+		 						</td>
+							</tr>
+							<tr>
+                            	<td class="commontd_t" width="150" align="center" height="25"></td>
+								<td class="commontd_t" height="25" style="text-align:left">
+									<input style="display:none"  id="resultValue" name="resultValue" value="批准">
+				 					<input class="button" type="submit" value="submit">
+								</td>
+							</tr>
+						</table>  
+		 			</Form>
+		 		</td>
+		 	</tr> 
+	</table>
+</body>
+</html>

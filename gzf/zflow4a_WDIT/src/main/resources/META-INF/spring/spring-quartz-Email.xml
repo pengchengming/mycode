@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd
+       http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.1.xsd">
+	<!--定义多个任务信息 -->  
+	
+<!--    "0 10,44 14 ? 3 WED" 每年三月的星期三的下午2:10和2:44触发  -->
+<!--    		<property name="cronExpression" value="0 10 20 ? * SUN" /> -->
+    <!-- 4、配置调度器 ，容器启动就会执行调度程序  -->  
+     <!-- 总管理类，如果lazy-init='false',则容器启动时就会执行调度程序-->    
+     <!-- 如果lazy-init='true',则需要实例化该bean才能执行调度程序            -->    
+    <bean id="emailSchdulerFactory" lazy-init="false" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">  
+        <property name="triggers">  
+            <list> 
+<!-- 					    <ref bean="emailResult_generateJson" />	 -->
+<!--                         <ref bean="emailCheck_generateJson" />   	 -->
+            </list>  
+        </property>  
+    </bean>
+    	
+	<!-- 创建被调用的工作类 --> 
+	 <bean id="emailQuartz" class="com.bizduo.zflow.quartz.EmailQuartz"></bean>
+	<!-- 定义工作类中的任务 -->
+	 
+	<bean id="emailResultJsonTask" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<!-- 调用的类     -->
+        <property name="targetObject" ref="emailQuartz"/>  
+		<!-- 调用类中的方法   -->
+        <property name="targetMethod" value="sendemailbyresult"/>   
+		<!-- false,证明不执行并发任务   -->
+        <property name="concurrent" value="false"/>     
+	</bean>
+	
+    <bean id="emailResult_generateJson" class="org.springframework.scheduling.quartz.CronTriggerBean">  
+        <property name="jobDetail" ref="emailResultJsonTask"/>  
+        <property name="cronExpression" value=" 0 0/1 * * * ?"/> 
+    </bean>	
+    
+    <bean id="emailCheckJsonTask" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<!-- 调用的类     -->
+        <property name="targetObject" ref="emailQuartz"/>  
+		<!-- 调用类中的方法   -->
+        <property name="targetMethod" value="sendemailbycheck"/>   
+		<!-- false,证明不执行并发任务   -->
+        <property name="concurrent" value="false"/>
+	</bean>
+	
+    <bean id="emailCheck_generateJson" class="org.springframework.scheduling.quartz.CronTriggerBean">  
+        <property name="jobDetail" ref="emailCheckJsonTask"/>  
+<!--         0 0 8 * * ? -->
+        <property name="cronExpression" value=" 0 0 8 * * ?"/>
+    </bean>	
+    
+    
+    
+</beans>

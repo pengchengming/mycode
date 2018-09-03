@@ -1,0 +1,41 @@
+﻿/*Pager*/
+.ke-dialog-footer .pager
+{
+    padding: 5px 0;
+    text-align: left;
+}
+.ke-dialog-footer .pager input
+{
+  border: 1px #d2d2d2 solid;
+    }
+.ke-dialog-footer .pager a, .pager span
+{
+    height: 20px;
+    line-height: 20px;
+    padding: 0 3px;
+    margin: 0 3px;
+    border: 1px #d2d2d2 solid;
+    background: #fff;
+    text-align: center;
+    overflow: hidden;
+    font-size: 12px;
+    text-decoration: none;
+}
+.ke-dialog-footer .pager .current
+{
+    font-weight: bold;
+    border: 1px #D2D2D2 solid;
+    background-color: #F0F0F0;
+    color: #AAAAAA;
+    height: 20px;
+    line-height: 20px;
+    text-decoration: none;
+}
+.ke-dialog-footer .pager .page_infos
+{
+    padding: 3px 0;
+    height: 24px;
+    line-height: 24px;
+    margin-right: 10px;
+    text-align: center;
+}

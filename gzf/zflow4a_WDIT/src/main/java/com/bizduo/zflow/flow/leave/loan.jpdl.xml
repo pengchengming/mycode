@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<process name="loan" xmlns="http://jbpm.org/4.4/jpdl">
+   <start g="214,37,48,48" name="start1">
+      <transition g="-47,-17" name="to 申请" to="申请"/>
+   </start>
+   <task assignee="#{owner}"  zForm="loan"  form="asking" g="192,126,92,52" name="申请">
+      <transition g="-71,-17" name="to 经理审批" to="经理审批"  statusType="01"  statusCode='0101' statusValue="010101"/>
+   </task>
+   <task assignee="manager" form="manager" g="194,241,92,52" name="经理审批">
+      <transition g="-29,-14" name="批准" to="end1"  statusType="01"  statusCode='0101' statusValue="010102"/>
+      <transition g="105,267;103,152:-47,-17" name="驳回" to="申请" statusType="01"  statusCode='0101' statusValue="010104" />
+   </task>
+   <end g="219,499,48,48" name="end1"/>
+</process>
