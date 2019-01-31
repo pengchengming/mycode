@@ -1,5 +1,4 @@
 # PcmBlog
-项目运行效果http://47.93.195.61:8080/PcmBlog/
 
 架构：Spring+Spring MVC+Hibernate  
 
