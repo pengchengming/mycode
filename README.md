@@ -1,4 +1,3 @@
-# myCode
 
 #[教务管理系统](https://github.com/pengchengming/myCode/tree/master/PcmExamination)
 -	架构：Spring+SpringMVC+Mybatis+shiro+mysql+maven
